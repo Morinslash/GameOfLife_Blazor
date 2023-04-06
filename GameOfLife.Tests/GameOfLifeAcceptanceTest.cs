@@ -1,4 +1,5 @@
 using Bunit;
+using GameOfLife.Frontend.Components;
 using GameOfLife.Frontend.GameLogic;
 using GameOfLife.Frontend.Pages;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,8 +17,8 @@ public class GameOfLifeAcceptanceTest
         var renderedComponent = testContext.RenderComponent<GameOfLifeBoard>();
 
         renderedComponent.Find("button").Click();
-
-        var renderedLifeCells = renderedComponent.FindComponents<LifeCell>();
+        
+        var renderedLifeCells = renderedComponent.FindComponents<LiveCell>();
         Assert.Equal(4,renderedLifeCells.Count);
     }
 }

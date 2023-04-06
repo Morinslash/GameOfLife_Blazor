@@ -2,9 +2,14 @@
 @using GameOfLife.Frontend.GameLogic
 
 @inject GameEngine GameEngine
+@using GameOfLife.Frontend.Components
 
 <h3>GameOfLifeBoard</h3>
 <button @onclick="GetNextGeneration">Render Next Generation</button>
+@foreach (Cell c in _lifeCells)
+{
+    <LiveCell/>
+}
 
 @code {
 
