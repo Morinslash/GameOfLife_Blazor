@@ -6,7 +6,7 @@ public class GameEngine
     {
         return new List<Cell> { new Cell(3,3), new Cell(4,3), new Cell(4,4) };
     }
-    public List<Cell> NextGeneration()
+    public List<Cell> NextGeneration(List<Cell> currentGeneration)
     {
         return new List<Cell> { new Cell(3,3), new Cell(4,3), new Cell(3,4) , new Cell(4,4)};
     }

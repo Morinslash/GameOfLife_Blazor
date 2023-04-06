@@ -36,7 +36,7 @@
 
     private void GetNextGeneration()
     {
-        _lifeCells = GameEngine.NextGeneration();
+        _lifeCells = GameEngine.NextGeneration(_lifeCells);
     }
 
     private bool IsCellAlive(int x, int y)
