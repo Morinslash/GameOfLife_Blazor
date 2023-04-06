@@ -1,6 +1,6 @@
 ﻿namespace GameOfLife.Frontend.GameLogic;
 
-public class Cell
+public record Cell
 {
     
 }
