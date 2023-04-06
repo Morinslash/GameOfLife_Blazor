@@ -1,6 +1,23 @@
 ﻿@page "/GameOfLifeBoard"
+@using GameOfLife.Frontend.GameLogic
+
+@inject GameEngine GameEngine
+
 <h3>GameOfLifeBoard</h3>
+<button @onclick="GetNextGeneration">Render Next Generation</button>
 
 @code {
-    
+
+    private List<Cell> _lifeCells = new();
+
+    protected override void OnInitialized()
+    {
+        _lifeCells = GameEngine.GetFirstGeneration();
+    }
+
+    private void GetNextGeneration()
+    {
+        _lifeCells = GameEngine.NextGeneration();
+    }
+
 }

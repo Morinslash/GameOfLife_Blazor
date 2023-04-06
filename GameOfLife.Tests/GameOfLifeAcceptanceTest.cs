@@ -1,5 +1,7 @@
 using Bunit;
+using GameOfLife.Frontend.GameLogic;
 using GameOfLife.Frontend.Pages;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GameOfLife.Tests;
 
@@ -9,6 +11,7 @@ public class GameOfLifeAcceptanceTest
     public void ICanSeeNextGenerationLayoutOnTheBoard()
     {
         var testContext = new TestContext();
+        testContext.Services.AddScoped(provide => new GameEngine());
 
         var renderedComponent = testContext.RenderComponent<GameOfLifeBoard>();
 
